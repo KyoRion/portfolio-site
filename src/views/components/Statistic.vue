@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const stats = [
   { value: 5, label: "Year of Experience" },
   { value: 6, label: "Satisfied Clients" },
