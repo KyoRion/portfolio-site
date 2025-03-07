@@ -2,6 +2,7 @@
 import Information from "@/views/components/Information.vue";
 import About from "@/views/components/About.vue";
 import Statistic from "@/views/components/Statistic.vue";
+import { Analytics } from '@vercel/analytics/vue';
 
 const socialLinks = [
   { icon: "linkedin", url: "https://www.linkedin.com/in/hangkhoa2611/" },
@@ -17,6 +18,7 @@ const socialLinks = [
     <Information></Information>
     <About></About>
     <Statistic></Statistic>
+    <Analytics></Analytics>
   </div>
 </template>
 
