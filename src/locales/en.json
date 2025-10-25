@@ -1,0 +1,25 @@
+{
+  "about": {
+    "title": "About Me",
+    "intro": "I'm Hang Dang Khoa (Kyorion) — a Full-stack Web/App Developer from Ho Chi Minh City, Vietnam, with over 6 years of experience building modern, scalable, and high-performing digital solutions.",
+    "skills": "I specialize in PHP and the Laravel framework, focusing on creating reliable web applications, APIs, and backend systems that power seamless user experiences.",
+    "goal": "Beyond coding, I aim to take on greater responsibility, support team success, and deliver innovative, user-focused solutions through hands-on development and close collaboration."
+  },
+  "stats": {
+    "experience": "Years of Experience",
+    "clients": "Satisfied Clients",
+    "projects": "Completed Projects"
+  },
+  "portfolio": {
+    "title": "Featured Projects",
+    "desc": "Browse my key full-stack projects and web applications.",
+    "search": "Search projects...",
+    "view": "View Project",
+    "prev": "Previous",
+    "next": "Next",
+    "no_results": "No projects found."
+  },
+  "footer": {
+    "text": "© {year} Kyorion - Product built with VueJS. All rights reserved."
+  }
+}

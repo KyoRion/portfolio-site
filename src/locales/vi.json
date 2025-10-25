@@ -1,0 +1,25 @@
+{
+  "about": {
+    "title": "Giới thiệu",
+    "intro": "Tôi là Hạng Đăng Khoa (Kyorion) — Lập trình viên Full-stack Web/App đến từ TP. Hồ Chí Minh, Việt Nam, với hơn 6 năm kinh nghiệm xây dựng các giải pháp số hiện đại, linh hoạt và hiệu suất cao.",
+    "skills": "Tôi chuyên về PHP và Laravel framework, tập trung phát triển các ứng dụng web, API, và hệ thống backend đáng tin cậy, mang lại trải nghiệm mượt mà cho người dùng.",
+    "goal": "Ngoài việc lập trình, tôi mong muốn đảm nhận nhiều trách nhiệm hơn, hỗ trợ đội nhóm đạt được thành công, và mang đến các giải pháp sáng tạo, hướng đến người dùng."
+  },
+  "stats": {
+    "experience": "Năm kinh nghiệm",
+    "clients": "Khách hàng hài lòng",
+    "projects": "Dự án đã hoàn thành"
+  },
+  "portfolio": {
+    "title": "Dự án tiêu biểu",
+    "desc": "Xem các dự án nổi bật của tôi trong lĩnh vực phát triển web full-stack.",
+    "search": "Tìm kiếm dự án...",
+    "view": "Xem dự án",
+    "prev": "Trước",
+    "next": "Sau",
+    "no_results": "Không tìm thấy dự án nào."
+  },
+  "footer": {
+    "text": "© {year} Kyorion - Sản phẩm được xây dựng bằng VueJS. Mọi quyền được bảo lưu."
+  }
+}

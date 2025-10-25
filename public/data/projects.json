@@ -1,0 +1,110 @@
+[
+  {
+    "id": 4,
+    "key": "html_email_templates",
+    "category": "Email-HTML",
+    "image": "/images/projects/email-html.png",
+    "tech": ["HTML", "CSS", "Email-Safe", "Email-HTML"],
+    "screenshots": [
+      "/images/emails/email-1.jpg",
+      "/images/emails/email-2.jpg"
+    ],
+    "link": "#",
+    "translations": {
+      "en": {
+        "title": "HTML Email Templates",
+        "desc": "A collection of responsive and production-ready email templates built for marketing, notification, and transactional campaigns.",
+        "highlight": "Built a library of pixel-perfect responsive HTML emails tested across major email clients including Gmail, Outlook, and Apple Mail.",
+        "team_size": "Personal project",
+        "scope": "Developed a variety of HTML email templates for multiple use cases: promotional campaigns, account notifications, transactional receipts, and newsletters. Ensured high compatibility across devices and email clients using MJML and inline CSS. Integrated templates into Laravel Blade and automated deployment using queue-based mailing systems.",
+        "responsibility": "Created and optimized responsive HTML email layouts following accessibility and branding standards; tested rendering performance across devices and email clients using Litmus; integrated templates into backend mailing workflows in Laravel; implemented dynamic content sections for personalized campaigns."
+      },
+      "vi": {
+        "title": "Bộ sưu tập Email HTML",
+        "desc": "Tập hợp các mẫu email HTML responsive, sẵn sàng sử dụng cho các chiến dịch marketing, thông báo và giao dịch hệ thống.",
+        "highlight": "Xây dựng thư viện email HTML chuẩn pixel, tương thích trên các nền tảng phổ biến như Gmail, Outlook và Apple Mail.",
+        "team_size": "Dự án cá nhân",
+        "scope": "Phát triển nhiều mẫu email HTML phục vụ các mục đích khác nhau như chiến dịch quảng cáo, thông báo tài khoản, biên lai giao dịch và bản tin. Đảm bảo khả năng hiển thị đồng nhất trên mọi thiết bị và nền tảng email bằng MJML và CSS inline. Tích hợp vào Laravel Blade và triển khai thông qua hệ thống gửi mail tự động bằng queue.",
+        "responsibility": "Thiết kế và tối ưu giao diện email responsive theo chuẩn thương hiệu và accessibility; kiểm thử khả năng hiển thị trên nhiều thiết bị và ứng dụng email bằng Litmus; tích hợp các mẫu email vào quy trình gửi mail backend trong Laravel; xây dựng các khu vực nội dung động phục vụ chiến dịch cá nhân hóa."
+      }
+    }
+  },
+  {
+    "id": 3,
+    "key": "scanx",
+    "category": "SaaS",
+    "image": "/images/projects/scanx.jpg",
+    "tech": ["Laravel", "Vue.js"],
+    "link": "https://scanx.vn",
+    "translations": {
+      "en": {
+        "title": "ScanX",
+        "desc": "Smart booking and table management platform designed for SMEs in Vietnam, helping restaurants and cafés digitize operations and improve customer experience.",
+        "highlight": "Developed a complete SaaS solution enabling small and medium businesses to manage reservations, QR-based table ordering, and real-time analytics seamlessly.",
+        "team_size": 7,
+        "scope": "ScanX provides an intelligent booking and table management system tailored for the Vietnamese SME market. The system includes online booking, QR code–based order-at-table, customer notifications, and admin dashboards. It is built to deliver an integrated digital experience for businesses, with a future roadmap for AI-driven insights and marketplace integration.",
+        "responsibility": "Designed and developed the entire system architecture including frontend, backend, and database. Implemented features for smart table booking, real-time order synchronization, and admin configuration dashboards. Built a scalable Laravel API for managing restaurants, menus, and booking sessions. Developed the frontend interface using Vue.js with smooth, responsive UX. Integrated QR-based order management, customer notifications, and analytics visualization."
+      },
+      "vi": {
+        "title": "ScanX",
+        "desc": "Nền tảng quản lý đặt chỗ và bàn thông minh dành cho doanh nghiệp vừa và nhỏ tại Việt Nam, giúp nhà hàng và quán cà phê số hóa quy trình vận hành và nâng cao trải nghiệm khách hàng.",
+        "highlight": "Phát triển giải pháp SaaS hoàn chỉnh giúp doanh nghiệp vừa và nhỏ quản lý đặt chỗ, gọi món qua mã QR, và theo dõi phân tích dữ liệu theo thời gian thực.",
+        "team_size": 7,
+        "scope": "ScanX cung cấp hệ thống quản lý đặt chỗ và bàn thông minh được thiết kế riêng cho thị trường SME tại Việt Nam. Hệ thống bao gồm các tính năng như đặt chỗ trực tuyến, gọi món qua mã QR, thông báo khách hàng, và bảng điều khiển quản trị. Dự án hướng đến việc mang lại trải nghiệm kỹ thuật số toàn diện cho doanh nghiệp, với định hướng mở rộng tích hợp AI và marketplace trong tương lai.",
+        "responsibility": "Thiết kế và phát triển toàn bộ kiến trúc hệ thống bao gồm frontend, backend và cơ sở dữ liệu. Xây dựng các tính năng đặt bàn thông minh, đồng bộ hóa đơn hàng theo thời gian thực, và bảng điều khiển cấu hình cho admin. Phát triển API Laravel mở rộng cho quản lý nhà hàng, thực đơn và phiên đặt chỗ. Xây dựng giao diện người dùng bằng Vue.js với trải nghiệm mượt mà, linh hoạt. Tích hợp tính năng gọi món qua mã QR, thông báo khách hàng và hệ thống phân tích dữ liệu trực quan."
+      }
+    }
+  },
+  {
+    "id": 2,
+    "key": "miniapp",
+    "category": "SaaS",
+    "image": "/images/projects/miniapp.png",
+    "tech": ["Laravel", "Vue.js"],
+    "link": "https://miniapp.vn",
+    "translations": {
+      "en": {
+        "title": "Miniapp.vn",
+        "desc": "A platform that enables businesses to rapidly build and deploy Zalo Mini Apps with integrated e-commerce and booking functionalities.",
+        "scope": "Contributed to the backend development of the Miniapp.vn platform, focused on building and optimizing e-commerce features including price calculation logic, promotional programs, and homestay/pickleball booking systems. Improved database structure and optimized backend code performance using Laravel, MySQL, Redis, and Docker.",
+        "responsibility": "Developed backend modules for e-commerce pricing, including logic for discounts, promotions, and coupon stacking; implemented booking features for homestay and sports facilities; optimized existing backend functions and database queries; collaborated closely with mentors and team members to refine business workflows and improve performance in production environments.",
+        "highlight": "Enhanced core e-commerce and booking features within Zalo Mini App ecosystem, improving data performance and pricing logic for business clients.",
+        "team_size": 4
+      },
+      "vi": {
+        "title": "Miniapp.vn",
+        "desc": "Nền tảng giúp doanh nghiệp xây dựng và triển khai nhanh chóng các Zalo Mini App tích hợp thương mại điện tử và đặt dịch vụ.",
+        "scope": "Tham gia phát triển backend cho nền tảng Miniapp.vn, tập trung vào xây dựng và tối ưu các tính năng e-commerce bao gồm logic tính giá, chương trình khuyến mãi, chiết khấu, và hệ thống đặt phòng homestay/pickleball. Cải thiện cấu trúc cơ sở dữ liệu và tối ưu hiệu năng hệ thống backend sử dụng Laravel, MySQL, Redis và Docker.",
+        "responsibility": "Phát triển module backend xử lý tính giá bán hàng có áp dụng khuyến mãi, chiết khấu và mã giảm giá; xây dựng tính năng đặt phòng và đặt sân; tối ưu các function và truy vấn cơ sở dữ liệu cũ; phối hợp với mentor và team để hoàn thiện quy trình nghiệp vụ, đảm bảo hiệu năng hệ thống trong môi trường production.",
+        "highlight": "Nâng cấp các tính năng cốt lõi về thương mại điện tử và đặt dịch vụ trong hệ sinh thái Zalo Mini App, cải thiện hiệu năng dữ liệu và logic tính giá cho khách hàng doanh nghiệp.",
+        "team_size": 4
+      }
+    }
+  },
+  {
+    "id": 1,
+    "key": "octokit",
+    "category": "SaaS",
+    "image": "/images/projects/octokit.png",
+    "tech": ["Laravel", "MySQL", "PostgreSQL"],
+    "link": "https://octokit.co",
+    "translations": {
+      "en": {
+        "title": "Octokit.co",
+        "desc": "A SaaS platform empowering agencies to rapidly launch gamified campaigns through a no-code editor tool. With a diverse game library and flexible asset customization, users can quickly create, configure, and publish WebGL-based campaigns with ease.",
+        "scope": "Developed a CMS platform for both frontend and backend to allow the game and content teams to customize the main website, manage games, and upload configurations. Built the API system powering customer interactions, campaign creation, and multi-language content management. Integrated AWS (EC2, S3, Route 53), Stripe subscription billing, and internal email automation tools for notifications and marketing.",
+        "responsibility": "Designed and built the core architecture and CMS from scratch using Laravel; implemented API and subscription management; developed internal and marketing email systems; integrated Stripe payments and AWS services. Solved complex challenges in dynamically cloning WebGL game builds and deploying customer-specific environments with zero downtime by building a custom helper facade and automated Nginx configuration service.",
+        "highlight": "Built the foundation architecture of the Octokit platform, helping agencies launch gamified campaigns 10x faster.",
+        "team_size": 6
+      },
+      "vi": {
+        "title": "Octokit.co",
+        "desc": "Nền tảng SaaS giúp các agency có thể khởi tạo chiến dịch minigame nhanh chóng thông qua công cụ editor trực quan, không cần biết code. Với kho game đa dạng và hệ thống asset phong phú, người dùng có thể dễ dàng tạo, cấu hình và xuất bản các chiến dịch WebGL chỉ trong vài phút.",
+        "scope": "Xây dựng hệ thống CMS bao gồm cả frontend và backend cho phép team game và quản trị nội dung tùy chỉnh website, upload và chỉnh sửa cấu hình game. Phát triển hệ thống API cho phép khách hàng tạo và quản lý game, tích hợp AWS (EC2, S3, Route 53), hệ thống thanh toán Stripe, gửi email nội bộ và marketing, cùng quản lý đa ngôn ngữ và bài viết trên hệ thống.",
+        "responsibility": "Thiết kế và đặt nền tảng kiến trúc hệ thống CMS bằng Laravel; xây dựng API, quản lý subscription, tích hợp Stripe và AWS; phát triển hệ thống gửi email nội bộ và marketing. Giải quyết bài toán xử lý file nội bộ và xuất bản WebGL bằng cách tạo helper facade tùy chỉnh để clone, validate và tái cấu trúc game theo cấu hình khách hàng. Tích hợp quy trình deploy tự động qua service cập nhật Nginx giúp publish game riêng biệt cho từng khách hàng mà không downtime.",
+        "highlight": "Xây dựng kiến trúc nền tảng của nền tảng Octokit, giúp các cơ quan triển khai các chiến dịch trò chơi nhanh hơn gấp 10 lần.",
+        "team_size": 6
+      }
+    }
+  }
+]
