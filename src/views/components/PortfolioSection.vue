@@ -98,14 +98,13 @@
       </div>
     </div>
 
-    <!-- 🪟 Project Details Modal -->
+    <!-- Modal -->
     <transition name="fade">
       <div
         v-if="selectedProject"
         class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-4 py-8"
         @click.self="closeModal"
       >
-        <!-- Modal container -->
         <div
           class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full relative animate-fadeIn flex flex-col max-h-[90vh]"
         >
@@ -124,38 +123,9 @@
 
           <!-- Scrollable content -->
           <div class="overflow-y-auto px-6 sm:px-8 py-6 flex-1">
-            <!-- Description -->
             <p class="text-gray-700 leading-relaxed mb-6 text-[15px]">
               {{ selectedProject.translations[locale].desc }}
             </p>
-
-            <!-- Highlight -->
-            <div
-              v-if="selectedProject.translations[locale].highlight"
-              class="p-4 mb-4 rounded-xl border border-blue-100 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm"
-            >
-              <h3 class="font-semibold text-blue-700 flex items-center gap-2 mb-2 text-[15px]">
-                <i class="fas fa-star text-yellow-500"></i>
-                {{ locale === 'vi' ? 'Điểm nổi bật' : 'Highlight' }}
-              </h3>
-              <p class="text-gray-700 text-[15px] leading-relaxed">
-                {{ selectedProject.translations[locale].highlight }}
-              </p>
-            </div>
-
-            <!-- Team Size -->
-            <div
-              v-if="selectedProject.translations[locale].team_size"
-              class="flex items-center gap-3 text-gray-600 text-[15px] mb-6"
-            >
-              <i class="fas fa-users text-blue-500"></i>
-              <span>
-            {{ locale === 'vi' ? 'Quy mô nhóm:' : 'Team size:' }}
-            <strong class="text-gray-900 ml-1">
-              {{ selectedProject.translations[locale].team_size }}
-            </strong>
-          </span>
-            </div>
 
             <!-- Scope -->
             <div>
@@ -179,44 +149,26 @@
               </p>
             </div>
 
-            <!-- Image Gallery -->
-            <div
-              v-if="selectedProject.screenshots && selectedProject.screenshots.length"
-              class="mt-8"
-            >
+            <!-- Gallery -->
+            <div v-if="selectedProject.screenshots?.length" class="mt-8">
               <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
                 <i class="fas fa-envelope-open-text text-blue-500"></i>
                 {{ locale === 'vi' ? 'Hình ảnh dự án' : 'Project Gallery' }}
               </h3>
-
               <div class="flex gap-4 overflow-x-auto pb-3">
                 <img
                   v-for="(img, idx) in selectedProject.screenshots"
                   :key="idx"
                   :src="img"
-                  :alt="`Project image ${idx + 1}`"
-                  class="h-64 w-auto rounded-xl shadow-sm hover:shadow-md hover:scale-[1.02] transition cursor-zoom-in object-cover"
+                  class="h-64 rounded-lg shadow-sm hover:shadow-md transition cursor-zoom-in"
                   @click="openFullscreen(img)"
                 />
               </div>
             </div>
-
-            <!-- Project Link -->
-            <div class="mt-8">
-              <a
-                v-if="selectedProject.link"
-                :href="selectedProject.link"
-                target="_blank"
-                class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition"
-              >
-                {{ locale === 'vi' ? 'Xem dự án trực tiếp' : 'View Live Project' }}
-                <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
           </div>
         </div>
 
-        <!-- Fullscreen image modal -->
+        <!-- Fullscreen Image -->
         <transition name="fade">
           <div
             v-if="fullscreenImage"
@@ -225,7 +177,7 @@
           >
             <img
               :src="fullscreenImage"
-              alt="Fullscreen project preview"
+              alt="Fullscreen preview"
               class="max-w-5xl w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
             />
             <button
@@ -238,8 +190,6 @@
         </transition>
       </div>
     </transition>
-
-
   </section>
 </template>
 
@@ -247,16 +197,31 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { locale } = useI18n()
+interface ProjectTranslation {
+  title: string
+  desc: string
+  scope?: string
+  responsibility?: string
+}
 
-const projects = ref<never[]>([])
+interface Project {
+  id: number
+  category: string
+  image: string
+  tech: string[]
+  link?: string
+  screenshots?: string[]
+  translations: Record<string, ProjectTranslation>
+}
+
+const { locale } = useI18n()
+const projects = ref<Project[]>([])
 const categories = ['All', 'SaaS', 'Email-HTML']
 const activeCategory = ref('All')
 const searchQuery = ref('')
 const page = ref(1)
 const perPage = 6
-const selectedProject = ref<never | null>(null)
-
+const selectedProject = ref<Project | null>(null)
 const fullscreenImage = ref<string | null>(null)
 
 function openFullscreen(img: string) {
@@ -266,7 +231,6 @@ function closeFullscreen() {
   fullscreenImage.value = null
 }
 
-// --- UI Texts ---
 const placeholders = computed(() => ({
   search: locale.value === 'vi' ? 'Tìm kiếm dự án...' : 'Search projects...',
   prev: locale.value === 'vi' ? 'Trước' : 'Previous',
@@ -287,28 +251,26 @@ onMounted(async () => {
   try {
     const res = await fetch('/data/projects.json')
     if (!res.ok) throw new Error('Failed to load project data')
-    projects.value = await res.json()
+    projects.value = (await res.json()) as Project[]
   } catch (err) {
     console.error('Error loading projects:', err)
   }
 })
 
 const normalize = (text: string) =>
-  text.toLowerCase().replace(/[^a-z0-9]/g, '');
+  text.toLowerCase().replace(/[^a-z0-9]/g, '')
 
 const filteredProjects = computed(() =>
   projects.value.filter((p) => {
     const matchCategory =
       activeCategory.value === 'All' ||
-      normalize(p.category) === normalize(activeCategory.value);
-
+      normalize(p.category) === normalize(activeCategory.value)
     const matchSearch = p.translations[locale.value].title
       .toLowerCase()
-      .includes(searchQuery.value.toLowerCase());
-
-    return matchCategory && matchSearch;
+      .includes(searchQuery.value.toLowerCase())
+    return matchCategory && matchSearch
   })
-);
+)
 
 const totalPages = computed(() =>
   Math.ceil(filteredProjects.value.length / perPage)
@@ -327,18 +289,13 @@ function prevPage() {
 
 watch([activeCategory, searchQuery], () => (page.value = 1))
 
-function formatMultiline(text: string | undefined) {
-  if (!text) return ''
-  // Split by semicolon and join with newlines
+function formatMultiline(text?: string) {
   return text
-    .split(';')
-    .map(line => line.trim())
-    .filter(Boolean)
-    .join('\n')
+    ? text.split(';').map(line => line.trim()).filter(Boolean).join('\n')
+    : ''
 }
 
-// --- Modal Logic ---
-function openProject(project: never) {
+function openProject(project: Project) {
   selectedProject.value = project
 }
 function closeModal() {
