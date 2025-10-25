@@ -2,8 +2,7 @@
 const socialLinks = [
   { icon: "linkedin", url: "https://www.linkedin.com/in/hangkhoa2611/" },
   { icon: "facebook", url: "https://www.facebook.com/khoahang2611" },
-  { icon: "github", url: "https://github.com/KyoRion" },
-  { icon: "whatsapp", url: "https://wa.me/84971952611" },
+  { icon: "github", url: "https://github.com/KyoRion" }
 ];
 </script>
 
